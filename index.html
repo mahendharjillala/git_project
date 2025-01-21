@@ -5,52 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahendhar Jillala's Resume</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f9;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
             color: #333;
+            scroll-behavior: smooth;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #004d99;
+            padding: 10px 0;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #00c6ff;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 900px;
+            margin: 100px auto 30px;
             background: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        h1, h2, h3 {
-            color: #555;
+        .container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+        }
+        h1 {
+            font-size: 3em;
+            color: #004d99;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 2em;
+            color: #0059b3;
+            border-bottom: 3px solid #00c6ff;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        p, li {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #444;
         }
         .header {
             text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 2.5em;
+            margin-bottom: 30px;
         }
         .header p {
             margin: 5px 0;
             font-size: 1.2em;
+            color: #0086b3;
         }
-        section {
-            margin-bottom: 20px;
-        }
-        .skills ul, .projects ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .contact a {
-            color: #0066cc;
+        .header a {
+            color: #ff5733;
             text-decoration: none;
+            font-weight: bold;
         }
-        .contact a:hover {
+        .header a:hover {
             text-decoration: underline;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+        ul li:before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            position: absolute;
+            left: 0;
+            color: #00c6ff;
+            font-size: 1.5em;
+            line-height: 0;
+        }
+        .skills ul li strong, .projects ul li strong {
+            color: #004d99;
+        }
+        .timeline {
+            position: relative;
+            margin: 20px 0;
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: #00c6ff;
+            top: 0;
+            bottom: 0;
+            left: 30px;
+        }
+        .timeline-item {
+            margin: 20px 0;
+            padding-left: 60px;
+            position: relative;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #00c6ff;
+            border-radius: 50%;
+            left: 20px;
+            top: 10px;
+        }
+        .container section {
+            margin-bottom: 30px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #7f8c8d;
+        }
+        .footer:hover {
+            color: #004d99;
         }
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#objective">Objective</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#activities">Activities</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <div class="header">
             <h1>Jillala Mahendhar</h1>
@@ -58,18 +174,22 @@
             <p><a href="https://www.linkedin.com/in/mahendhar-jillala-4107802a7/">LinkedIn Profile</a></p>
         </div>
 
-        <section>
+        <section id="objective">
             <h2>Objective</h2>
             <p>A college student pursuing second year, seeking an internship.</p>
         </section>
 
-        <section>
+        <section id="education">
             <h2>Education</h2>
-            <p>Bachelor of Technology in Computer Science and Engineering, KL University</p>
-            <p>Expected Graduation: 2027</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <p><strong>Bachelor of Technology in Computer Science and Engineering</strong> - KL University</p>
+                    <p>Expected Graduation: 2027</p>
+                </div>
+            </div>
         </section>
 
-        <section class="skills">
+        <section id="skills" class="skills">
             <h2>Skills</h2>
             <ul>
                 <li><strong>Programming Languages:</strong> C, Java, JavaScript</li>
@@ -78,7 +198,7 @@
             </ul>
         </section>
 
-        <section class="projects">
+        <section id="projects" class="projects">
             <h2>Projects</h2>
             <ul>
                 <li>
@@ -88,7 +208,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="activities">
             <h2>Extra-Curricular Activities</h2>
             <ul>
                 <li>Active member of the Coding Club, organizing hackathons and workshops.</li>
@@ -97,6 +217,10 @@
                 <li>Demonstrated teamwork and leadership through sports.</li>
             </ul>
         </section>
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Jillala Mahendhar. All rights reserved.
     </div>
 </body>
 </html>
